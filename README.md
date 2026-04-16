@@ -2,6 +2,20 @@
 
 报销材料整理自动化工具集。将发票、支付截图、购物截图整理成报销格式，自动生成Word文档和报销文件夹。
 
+## 一键安装
+
+### Windows (PowerShell)
+```powershell
+irm https://raw.githubusercontent.com/SPARKLE-W/reimbursement-workflow-skills/main/install.ps1 | iex
+```
+
+### macOS / Linux
+```bash
+curl -fsSL https://raw.githubusercontent.com/SPARKLE-W/reimbursement-workflow-skills/main/install.sh | bash
+```
+
+或者从 [Release](https://github.com/SPARKLE-W/reimbursement-workflow-skills/releases) 下载全部skill文件，手动复制到 `~/.claude/skills/` 目录。
+
 ## Skills
 
 | Skill | 说明 |
@@ -29,12 +43,6 @@
 4. /invoice-matching - 三者匹配
 5. /docx-generation - 生成Word文档和报销文件夹
 6. /verification - 检查验证
-
-## 安装
-
-将 .skill 文件复制到 Claude Code skills 目录：
-- Windows: C:/Users/<user>/.claude/skills/
-- macOS: ~/.claude/skills/
 
 ## 依赖
 - Node.js
