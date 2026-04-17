@@ -1,12 +1,9 @@
-# Skills (downloaded from release)
-*.skill
-
 # OS
 .DS_Store
 Thumbs.db
 
 # Editor
-.vscode/
+.vspace/
 .idea/
 
 # Temp
