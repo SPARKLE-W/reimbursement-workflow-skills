@@ -20,6 +20,7 @@ $skillFiles = @(
     "shopping-screenshot-renaming.skill",
     "invoice-matching.skill",
     "docx-generation.skill",
+    "invoice-category-summary.skill",
     "verification.skill"
 )
 

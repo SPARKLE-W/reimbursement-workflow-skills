@@ -44,7 +44,12 @@ Provide: invoice folder path, payment screenshot folder path, shopping screensho
 3. `/shopping-screenshot-renaming` - Rename shopping screenshots
 4. `/invoice-matching` - Match all three
 5. `/docx-generation` - Generate Word doc + folders
-6. `/verification` - Verify materials
+6. `/invoice-category-summary` - Generate `报销名目.txt`
+7. `/verification` - Verify materials
+
+**Packaging (Step 8):** the final zip is named `{name}{studentID}-{n}张发票-{amount}元.zip` and contains **only** three items, directly at the archive root: `发票/`, `支付截图+购买记录.docx`, `报销名目.txt`. `支付截图/` and `购买记录/` are working folders and must **not** be packed.
+
+**API / subscription recharges** (DeepSeek, MiniMax, iFlytek...): schools require proof that the recharged money has actually been consumed. Invoice the **consumed amount** (platforms support both "by recharge" and "by consumption" invoicing, with a self-filled amount), void the old recharge-based invoice, put the usage reports as page 1 of the Word doc, and keep only as many payment screenshots as needed to cover the invoice amount.
 
 ### Skills
 
@@ -56,6 +61,7 @@ Provide: invoice folder path, payment screenshot folder path, shopping screensho
 | shopping-screenshot-renaming | Rename shopping screenshots |
 | invoice-matching | Match by amount + company + item |
 | docx-generation | Generate Word doc and folders |
+| invoice-category-summary | Generate classified `报销名目.txt` |
 | verification | Verify prices and matching |
 
 ### Dependencies
@@ -107,7 +113,12 @@ curl -fsSL https://raw.githubusercontent.com/SPARKLE-W/reimbursement-workflow-sk
 3. `/shopping-screenshot-renaming` - 购物截图命名
 4. `/invoice-matching` - 三者匹配
 5. `/docx-generation` - 生成Word文档和报销文件夹
-6. `/verification` - 检查验证
+6. `/invoice-category-summary` - 生成 `报销名目.txt`
+7. `/verification` - 检查验证
+
+**打包规范（Step 8）**：最终压缩包命名 `{姓名}{学号}-{张数}张发票-{金额}元.zip`，包内**只放**三项且直接位于包根目录：`发票/`、`支付截图+购买记录.docx`、`报销名目.txt`。`支付截图/`、`购买记录/` 只是整理时的工作目录，**不要**打进压缩包。
+
+**API / 订阅充值类**（DeepSeek、MiniMax、讯飞等）：学校要求证明充进去的钱确实花掉了。要按**已消耗金额**开票（平台支持「按充值金额」和「按消耗金额」两种口径，金额自己填），把旧的按充值开的发票作废重开；Word 第 1 页放用量记录月报，支付截图只留到合计盖住发票金额即可。
 
 ### 依赖
 
